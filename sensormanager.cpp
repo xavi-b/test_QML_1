@@ -15,18 +15,18 @@ SensorManager::SensorManager(QObject* parent) : QObject(parent)
 void SensorManager::initTestSensors()
 {
     this->sensors = {
-        new Sensor(Sensor::GPS, "Front gps"),
-        new Sensor(Sensor::GPS, "Rear gps"),
-        new Sensor(Sensor::GPS, "Starboard gps"),
-        new Sensor(Sensor::GPS, "Port gps"),
-        new Sensor(Sensor::Compass, "Compass #1"),
-        new Sensor(Sensor::Compass, "Compass #2"),
-        new Sensor(Sensor::Compass, "Compass #3"),
-        new Sensor(Sensor::Compass, "Compass #4"),
-        new Sensor(Sensor::Anemometer, "Primary anemometer"),
-        new Sensor(Sensor::Anemometer, "Secondary anemometer"),
-        new Sensor(Sensor::Gyro, "Main gyro"),
-        new Sensor(Sensor::Gyro, "Backup gyro")
+        new Sensor(Sensor::GPS, "Front gps", this),
+        new Sensor(Sensor::GPS, "Rear gps", this),
+        new Sensor(Sensor::GPS, "Starboard gps", this),
+        new Sensor(Sensor::GPS, "Port gps", this),
+        new Sensor(Sensor::Compass, "Compass #1", this),
+        new Sensor(Sensor::Compass, "Compass #2", this),
+        new Sensor(Sensor::Compass, "Compass #3", this),
+        new Sensor(Sensor::Compass, "Compass #4", this),
+        new Sensor(Sensor::Anemometer, "Primary anemometer", this),
+        new Sensor(Sensor::Anemometer, "Secondary anemometer", this),
+        new Sensor(Sensor::Gyro, "Main gyro", this),
+        new Sensor(Sensor::Gyro, "Backup gyro", this)
     };
     emit sensorsChanged(this->sensors);
 }
